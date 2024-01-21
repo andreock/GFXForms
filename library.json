@@ -1,0 +1,22 @@
+{
+    "name": "GFXForms",
+    "keywords": "st77xx, display, adafruit, gfx",
+    "description": "A library to create GUI using ST77XX displays.",
+    "authors":
+	{
+		"name": "Andreock",
+		"maintainer": true
+	},
+	"repository":
+    {
+        "type": "git",
+        "url": "https://github.com/andreock/GFXForms.git"
+    },
+    "version": "1.0",
+    "frameworks": "arduino",
+    "dependencies":
+	{
+		"ArduinoPcap": "*",
+        "adafruit/Adafruit ST7735 and ST7789 Library": "^1.10.3"
+	}
+}
