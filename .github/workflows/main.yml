@@ -5,13 +5,13 @@ on:
     branches: [ main ]
 
 jobs:
-  sync:
+  build:
     permissions:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: mattnotmitt/doxygen-action@v1.9.5
-
+      - uses: actions/checkout@v3
+      - uses: mattnotmitt/doxygen-action@v1.9.
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
