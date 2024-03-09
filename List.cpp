@@ -27,6 +27,19 @@ List::List(GFXForms *display, const char *text, int font_size, uint16_t font_col
   text_widget->set_wrap(true);
 }
 
+List::List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, Bitmap *icon, uint16_t rect_color)
+{
+  color = rect_color;
+  box = new Rect(display, 0 , _heigth , 0, 0, 8, rect_color);
+  heigth = _heigth;
+  grid_widget = new Grid(display, 1, 2);
+  text_widget = new Text(display, font_color, text, font_size);
+  text_widget->set_wrap(true);
+  grid_widget->add(icon);
+  grid_widget->add(text_widget);
+  grid_widget->set_space_between(10); // Add some spacing between the icons and the text
+}
+
 List::~List()
 {
 }

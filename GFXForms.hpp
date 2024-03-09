@@ -41,6 +41,7 @@ class GFXForms {
    friend class Text;
    friend class Rect;
    friend class Grid;
+   friend class Bitmap;
 };
 
 #endif

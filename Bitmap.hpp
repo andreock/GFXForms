@@ -20,59 +20,45 @@
 #include "Rect.hpp"
 #include "Text.hpp"
 #include "Grid.hpp"
-#include "Bitmap.hpp"
-#ifndef LISTUI_H
-#define LISTUI_H
 
-#define MARGIN 3
-#define MARGIN_X 5
+#ifndef BITMAPUI_H
+#define BITMAPUI_H
 
-class List: public Widget
+class Bitmap: public Widget
 {
 private:
-    Rect *box;
-    Text *text_widget;
-    Grid *grid_widget = nullptr;
+    uint8_t *image;
+    void clean_bitmap() {
+        framework->tft->fillRect(x, y, width, heigth, framework->background_color);
+    }
 public:
-    List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, uint16_t rect_color);
-    List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, Bitmap *icon, uint16_t rect_color);
-    ~List();
+    Bitmap(GFXForms *display, uint8_t *_image, uint8_t _width, uint8_t _height);
+    Bitmap(GFXForms *display, uint8_t *_image, uint8_t _width, uint8_t _height, uint8_t _x, uint8_t _y);
+    ~Bitmap();
     void set_pos(int _x, int _y){
         x = _x;
         y = _y;
-        if(grid_widget == nullptr){
-            box->set_pos(x, y);
-            text_widget->set_pos(x + MARGIN_X, y + MARGIN);
-        } else {
-            box->set_pos(x, y);
-            grid_widget->set_pos(x, y);
-        }
+        clean_bitmap();
+        display();
     };
     void set_color(uint16_t _color){};
-    void display() {
-        if(grid_widget == nullptr) {
-            box->display();
-            text_widget->display();           
-        } else {
-            box->display();
-            grid_widget->display();
-        }
+    void display(){
+        framework->tft->drawBitmap(x, y, image, width, heigth, ST77XX_WHITE);
     };
     void set_dimension(int _width, int _heigth){
-        width = _width;
-        heigth = _heigth;
-        box->set_dimension(_width, heigth);
+        // width = _width;
+        // heigth = _heigth;
     };
     void set_selected(bool _selected) {
         selected = _selected;
-        if(selected){
-            box->set_color(ST77XX_BLUE);
-            box->display();
-        }
-        else{
-            box->set_color(ST77XX_BLACK);
-            box->display();
-        }
+        // if(selected){
+        //     // box->set_color(ST77XX_BLUE);
+        //     // box->display();
+        // }
+        // else{
+        //     box->set_color(ST77XX_BLACK);
+        //     box->display();
+        // }
     };
     void click(void callback()) {
         callback();
