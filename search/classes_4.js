@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['widget_0',['Widget',['../classWidget.html',1,'']]]
+  ['text_0',['Text',['../classText.html',1,'']]]
 ];

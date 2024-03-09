@@ -95,7 +95,7 @@ $(function() {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;Rect.hpp&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;Text.hpp&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;Grid.hpp&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;Bitmap.hpp&quot;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef LISTUI_H</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define LISTUI_H</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
@@ -107,43 +107,59 @@ $(function() {
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_class" href="classRect.html">Rect</a> *box;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="classText.html">Text</a> *text_widget;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classList.html">List</a>(<a class="code hl_class" href="classGFXForms.html">GFXForms</a> *display, <span class="keyword">const</span> <span class="keywordtype">char</span> *text, <span class="keywordtype">int</span> font_size, uint16_t font_color, <span class="keywordtype">int</span> _heigth, uint16_t rect_color);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classList.html">~List</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> set_pos(<span class="keywordtype">int</span> _x, <span class="keywordtype">int</span> _y){</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        x = _x;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        y = _y;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        box-&gt;<a class="code hl_function" href="classRect.html#ad59b3adc285a4ba6d5a6b1bb8ba9f277">set_pos</a>(x, y);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        text_widget-&gt;<a class="code hl_function" href="classText.html#aa7d98e7c2342641462464d7715f431e3">set_pos</a>(x + MARGIN_X, y + MARGIN);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    };</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> set_color(uint16_t _color){};</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> display(){</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        box-&gt;<a class="code hl_function" href="classRect.html#ad20d44320d3d9121eee06d7c50484572">display</a>();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        text_widget-&gt;<a class="code hl_function" href="classText.html#ae0b4b2109764e87251d9fd4215484dea">display</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    };</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> set_dimension(<span class="keywordtype">int</span> _width, <span class="keywordtype">int</span> _heigth){</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        width = _width;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        heigth = _heigth;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        box-&gt;<a class="code hl_function" href="classRect.html#ab7365298f54e4771b5ee10b8ce400e84">set_dimension</a>(_width, heigth);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> set_selected(<span class="keywordtype">bool</span> _selected) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        selected = _selected;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span>(selected){</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            box-&gt;<a class="code hl_function" href="classRect.html#acebef27a0830a327bc0a2dcba88f2f29">set_color</a>(ST77XX_BLUE);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad20d44320d3d9121eee06d7c50484572">display</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="classGrid.html">Grid</a> *grid_widget = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classList.html">List</a>(<a class="code hl_class" href="classGFXForms.html">GFXForms</a> *display, <span class="keyword">const</span> <span class="keywordtype">char</span> *text, <span class="keywordtype">int</span> font_size, uint16_t font_color, <span class="keywordtype">int</span> _heigth, uint16_t rect_color);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_class" href="classList.html">List</a>(<a class="code hl_class" href="classGFXForms.html">GFXForms</a> *display, <span class="keyword">const</span> <span class="keywordtype">char</span> *text, <span class="keywordtype">int</span> font_size, uint16_t font_color, <span class="keywordtype">int</span> _heigth, <a class="code hl_class" href="classBitmap.html">Bitmap</a> *icon, uint16_t rect_color);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="classList.html">~List</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> set_pos(<span class="keywordtype">int</span> _x, <span class="keywordtype">int</span> _y){</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        x = _x;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        y = _y;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span>(grid_widget == <span class="keyword">nullptr</span>){</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad59b3adc285a4ba6d5a6b1bb8ba9f277">set_pos</a>(x, y);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            text_widget-&gt;<a class="code hl_function" href="classText.html#aa7d98e7c2342641462464d7715f431e3">set_pos</a>(x + MARGIN_X, y + MARGIN);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad59b3adc285a4ba6d5a6b1bb8ba9f277">set_pos</a>(x, y);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            grid_widget-&gt;<a class="code hl_function" href="classGrid.html#aa4ea702cd046f85c872e487868b62042">set_pos</a>(x, y);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> set_color(uint16_t _color){};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> display() {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span>(grid_widget == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad20d44320d3d9121eee06d7c50484572">display</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            text_widget-&gt;<a class="code hl_function" href="classText.html#ae0b4b2109764e87251d9fd4215484dea">display</a>();           </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad20d44320d3d9121eee06d7c50484572">display</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            grid_widget-&gt;<a class="code hl_function" href="classGrid.html#af90c332433d3b6e731e761bc0c353c97">display</a>();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">else</span>{</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            box-&gt;<a class="code hl_function" href="classRect.html#acebef27a0830a327bc0a2dcba88f2f29">set_color</a>(ST77XX_BLACK);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad20d44320d3d9121eee06d7c50484572">display</a>();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    };</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> click(<span class="keywordtype">void</span> callback()) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        callback();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> set_dimension(<span class="keywordtype">int</span> _width, <span class="keywordtype">int</span> _heigth){</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        width = _width;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        heigth = _heigth;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        box-&gt;<a class="code hl_function" href="classRect.html#ab7365298f54e4771b5ee10b8ce400e84">set_dimension</a>(_width, heigth);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    };</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> set_selected(<span class="keywordtype">bool</span> _selected) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        selected = _selected;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span>(selected){</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            box-&gt;<a class="code hl_function" href="classRect.html#acebef27a0830a327bc0a2dcba88f2f29">set_color</a>(ST77XX_BLUE);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad20d44320d3d9121eee06d7c50484572">display</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            box-&gt;<a class="code hl_function" href="classRect.html#acebef27a0830a327bc0a2dcba88f2f29">set_color</a>(ST77XX_BLACK);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            box-&gt;<a class="code hl_function" href="classRect.html#ad20d44320d3d9121eee06d7c50484572">display</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> click(<span class="keywordtype">void</span> callback()) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        callback();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassBitmap_html"><div class="ttname"><a href="classBitmap.html">Bitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap.hpp:28</div></div>
 <div class="ttc" id="aclassGFXForms_html"><div class="ttname"><a href="classGFXForms.html">GFXForms</a></div><div class="ttdef"><b>Definition:</b> GFXForms.hpp:24</div></div>
+<div class="ttc" id="aclassGrid_html"><div class="ttname"><a href="classGrid.html">Grid</a></div><div class="ttdef"><b>Definition:</b> Grid.hpp:28</div></div>
+<div class="ttc" id="aclassGrid_html_aa4ea702cd046f85c872e487868b62042"><div class="ttname"><a href="classGrid.html#aa4ea702cd046f85c872e487868b62042">Grid::set_pos</a></div><div class="ttdeci">void set_pos(int _x, int _y)</div><div class="ttdoc">Set position of grid.</div><div class="ttdef"><b>Definition:</b> Grid.hpp:70</div></div>
+<div class="ttc" id="aclassGrid_html_af90c332433d3b6e731e761bc0c353c97"><div class="ttname"><a href="classGrid.html#af90c332433d3b6e731e761bc0c353c97">Grid::display</a></div><div class="ttdeci">void display()</div><div class="ttdoc">Display the grid on TFT screen.</div><div class="ttdef"><b>Definition:</b> Grid.cpp:44</div></div>
 <div class="ttc" id="aclassList_html"><div class="ttname"><a href="classList.html">List</a></div><div class="ttdef"><b>Definition:</b> List.hpp:31</div></div>
 <div class="ttc" id="aclassRect_html"><div class="ttname"><a href="classRect.html">Rect</a></div><div class="ttdef"><b>Definition:</b> Rect.hpp:24</div></div>
 <div class="ttc" id="aclassRect_html_ab7365298f54e4771b5ee10b8ce400e84"><div class="ttname"><a href="classRect.html#ab7365298f54e4771b5ee10b8ce400e84">Rect::set_dimension</a></div><div class="ttdeci">void set_dimension(int _width, int _heigth)</div><div class="ttdoc">Set dimensions of rect.</div><div class="ttdef"><b>Definition:</b> Rect.cpp:40</div></div>

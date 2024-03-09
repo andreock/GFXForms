@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['display_0',['display',['../classGrid.html#af90c332433d3b6e731e761bc0c353c97',1,'Grid::display()'],['../classRect.html#ad20d44320d3d9121eee06d7c50484572',1,'Rect::display()'],['../classText.html#ae0b4b2109764e87251d9fd4215484dea',1,'Text::display()']]]
+  ['click_0',['click',['../classGrid.html#ae9d35f0fc9f267743e8be9d2a0b92c85',1,'Grid::click(void callback())'],['../classGrid.html#afc3a31a2b00952787d5e434f4410942f',1,'Grid::click(int pos, void callback())'],['../classGrid.html#ac2fc11f7f4587dc6232ba0cdd7fd0a51',1,'Grid::click(int pos)'],['../classRect.html#a81714cf2590d8da89dcb921474506227',1,'Rect::click()'],['../classText.html#a49ab763ac9d40f3f6d9843b8d0ed0932',1,'Text::click()']]]
 ];
