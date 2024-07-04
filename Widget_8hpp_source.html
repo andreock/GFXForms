@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">bool</span> selected = <span class="keyword">false</span>;   <span class="comment">// Whether the widget</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">bool</span> clicked = <span class="keyword">false</span>;    <span class="comment">// Whether the widget is clicked or not</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  uint16_t color;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::function&lt;void()&gt; cb;  <span class="comment">// Default callback</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::function&lt;void()&gt; cb = <span class="keyword">nullptr</span>;  <span class="comment">// Default callback</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_pos(<span class="keywordtype">int</span> _x, <span class="keywordtype">int</span> _y) = 0;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_color(uint16_t _color) = 0;</div>
@@ -127,13 +127,10 @@ $(function() {
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classWidget.html#a6dd35c7aee1c6e98f133538d26de5347">   61</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classWidget.html#a6dd35c7aee1c6e98f133538d26de5347">get_heigth</a>() { <span class="keywordflow">return</span> heigth; }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> set_callback(std::function&lt;<span class="keywordtype">void</span>()&gt; callback) { cb = callback; }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> click() { </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    clicked = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    cb(); </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> click() = 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassGFXForms_html"><div class="ttname"><a href="classGFXForms.html">GFXForms</a></div><div class="ttdef"><b>Definition:</b> GFXForms.hpp:24</div></div>
 <div class="ttc" id="aclassWidget_html"><div class="ttname"><a href="classWidget.html">Widget</a></div><div class="ttdef"><b>Definition:</b> Widget.hpp:26</div></div>
 <div class="ttc" id="aclassWidget_html_a6dd35c7aee1c6e98f133538d26de5347"><div class="ttname"><a href="classWidget.html#a6dd35c7aee1c6e98f133538d26de5347">Widget::get_heigth</a></div><div class="ttdeci">int get_heigth()</div><div class="ttdoc">Get widget height.</div><div class="ttdef"><b>Definition:</b> Widget.hpp:61</div></div>

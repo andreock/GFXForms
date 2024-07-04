@@ -136,9 +136,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set_y_spacing</b> (in
 <tr class="memitem:ac2fc11f7f4587dc6232ba0cdd7fd0a51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrid.html#ac2fc11f7f4587dc6232ba0cdd7fd0a51">click</a> (int pos)</td></tr>
 <tr class="memdesc:ac2fc11f7f4587dc6232ba0cdd7fd0a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Click element at pos without execute callback.  <a href="classGrid.html#ac2fc11f7f4587dc6232ba0cdd7fd0a51">More...</a><br /></td></tr>
 <tr class="separator:ac2fc11f7f4587dc6232ba0cdd7fd0a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a631126aac5b7f31e2b1513dc5c85a86b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrid.html#a631126aac5b7f31e2b1513dc5c85a86b">click</a> ()</td></tr>
+<tr class="separator:a631126aac5b7f31e2b1513dc5c85a86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af47f21ddc06f52554b41652645ae9d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrid.html#af47f21ddc06f52554b41652645ae9d45">set_callback</a> (int pos, void callback())</td></tr>
 <tr class="memdesc:af47f21ddc06f52554b41652645ae9d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set callback on widget at pos.  <a href="classGrid.html#af47f21ddc06f52554b41652645ae9d45">More...</a><br /></td></tr>
 <tr class="separator:af47f21ddc06f52554b41652645ae9d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e6d70b9e29403d161f520c4e4e4e08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classWidget.html">Widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrid.html#a76e6d70b9e29403d161f520c4e4e4e08">get_current_widget</a> ()</td></tr>
+<tr class="memdesc:a76e6d70b9e29403d161f520c4e4e4e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected widget.  <a href="classGrid.html#a76e6d70b9e29403d161f520c4e4e4e08">More...</a><br /></td></tr>
+<tr class="separator:a76e6d70b9e29403d161f520c4e4e4e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classWidget"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classWidget')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classWidget.html">Widget</a></td></tr>
 <tr class="memitem:a6d800d7dd1c7b9ec7393bcae6a8ee539 inherit pub_methods_classWidget"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWidget.html#a6d800d7dd1c7b9ec7393bcae6a8ee539">set_pos</a> (int _x, int _y)=0</td></tr>
 <tr class="separator:a6d800d7dd1c7b9ec7393bcae6a8ee539 inherit pub_methods_classWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,9 +172,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set_y_spacing</b> (in
 <tr class="memitem:a6d4ea7964418337f293c2e9a7d1f4c9e inherit pub_methods_classWidget"><td class="memItemLeft" align="right" valign="top"><a id="a6d4ea7964418337f293c2e9a7d1f4c9e" name="a6d4ea7964418337f293c2e9a7d1f4c9e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_callback</b> (std::function&lt; void()&gt; callback)</td></tr>
 <tr class="separator:a6d4ea7964418337f293c2e9a7d1f4c9e inherit pub_methods_classWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24a85032147f279abdaeabaa9da33cab inherit pub_methods_classWidget"><td class="memItemLeft" align="right" valign="top"><a id="a24a85032147f279abdaeabaa9da33cab" name="a24a85032147f279abdaeabaa9da33cab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>click</b> ()</td></tr>
-<tr class="separator:a24a85032147f279abdaeabaa9da33cab inherit pub_methods_classWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf324aed005389bf308e98421baebda inherit pub_methods_classWidget"><td class="memItemLeft" align="right" valign="top"><a id="aadf324aed005389bf308e98421baebda" name="aadf324aed005389bf308e98421baebda"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>click</b> ()=0</td></tr>
+<tr class="separator:aadf324aed005389bf308e98421baebda inherit pub_methods_classWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -202,7 +207,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>clicked</b> = false</
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>color</b></td></tr>
 <tr class="separator:a5359f173b1ebe906a9445b1035d4ffd5 inherit pro_attribs_classWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa3f745c5c51714900118524c12d1c43 inherit pro_attribs_classWidget"><td class="memItemLeft" align="right" valign="top"><a id="aaa3f745c5c51714900118524c12d1c43" name="aaa3f745c5c51714900118524c12d1c43"></a>
-std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cb</b></td></tr>
+std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cb</b> = nullptr</td></tr>
 <tr class="separator:aaa3f745c5c51714900118524c12d1c43 inherit pro_attribs_classWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -328,8 +333,35 @@ std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom">
 
 </div>
 </div>
+<a id="a631126aac5b7f31e2b1513dc5c85a86b" name="a631126aac5b7f31e2b1513dc5c85a86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a631126aac5b7f31e2b1513dc5c85a86b">&#9670;&#160;</a></span>click() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid::click </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classWidget.html">Widget</a>.</p>
+
+</div>
+</div>
 <a id="ac2fc11f7f4587dc6232ba0cdd7fd0a51" name="ac2fc11f7f4587dc6232ba0cdd7fd0a51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2fc11f7f4587dc6232ba0cdd7fd0a51">&#9670;&#160;</a></span>click() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2fc11f7f4587dc6232ba0cdd7fd0a51">&#9670;&#160;</a></span>click() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +395,7 @@ std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom">
 </div>
 </div>
 <a id="afc3a31a2b00952787d5e434f4410942f" name="afc3a31a2b00952787d5e434f4410942f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc3a31a2b00952787d5e434f4410942f">&#9670;&#160;</a></span>click() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3a31a2b00952787d5e434f4410942f">&#9670;&#160;</a></span>click() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,11 +436,12 @@ std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom">
   </table>
   </dd>
 </dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd></dd></dl>
 
 </div>
 </div>
 <a id="ae9d35f0fc9f267743e8be9d2a0b92c85" name="ae9d35f0fc9f267743e8be9d2a0b92c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9d35f0fc9f267743e8be9d2a0b92c85">&#9670;&#160;</a></span>click() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d35f0fc9f267743e8be9d2a0b92c85">&#9670;&#160;</a></span>click() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,6 +502,34 @@ std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom">
 <p>Display the grid on TFT screen. </p>
 
 <p>Implements <a class="el" href="classWidget.html">Widget</a>.</p>
+
+</div>
+</div>
+<a id="a76e6d70b9e29403d161f520c4e4e4e08" name="a76e6d70b9e29403d161f520c4e4e4e08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e6d70b9e29403d161f520c4e4e4e08">&#9670;&#160;</a></span>get_current_widget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classWidget.html">Widget</a> * Grid::get_current_widget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the selected widget. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the selected widget </dd></dl>
 
 </div>
 </div>
