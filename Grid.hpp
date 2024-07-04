@@ -121,10 +121,11 @@ class Grid : public Widget {
     callback();
   }
 
-
+  // TODO: Deprecate it
   /// @brief Propagate click to widget at pos and execute callback
   /// @param pos Position of element to click
   /// @param callback function to be called
+  /// @deprecated
   void click(int pos, void callback()) {
     widgets[pos]->click(callback);
   }
@@ -136,11 +137,23 @@ class Grid : public Widget {
     widgets[pos]->click();
   }
 
+  void click() {
+    Serial.println("Click on grid");
+    widgets[selected_widget]->click();
+  }
+
   /// @brief Set callback on widget at pos
   /// @param pos Widget position
   /// @param callback function to be set
   void set_callback(int pos, void callback()) {
     widgets[pos]->set_callback(callback);
+  }
+
+  /// @brief Get the selected widget
+  /// @return Reference to the selected widget
+  Widget *get_current_widget(){
+    Serial.println(selected_widget);
+    return widgets[selected_widget];
   }
 };
 

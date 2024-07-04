@@ -34,8 +34,8 @@ private:
     Text *text_widget;
     Grid *grid_widget = nullptr;
 public:
-    List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, uint16_t rect_color);
-    List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, Bitmap *icon, uint16_t rect_color);
+    List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, uint16_t rect_color, std::function<void()> _cb);
+    List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, Bitmap *icon, uint16_t rect_color, std::function<void()> _cb);
     ~List();
     void set_pos(int _x, int _y){
         x = _x;
@@ -76,6 +76,10 @@ public:
     };
     void click(void callback()) {
         callback();
+    }
+    void click() {
+        if(cb != nullptr)
+            cb();
     }
 };
 

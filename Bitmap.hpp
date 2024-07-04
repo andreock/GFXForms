@@ -63,6 +63,9 @@ public:
     void click(void callback()) {
         callback();
     }
+    void click() {
+        
+    }
 };
 
 #endif

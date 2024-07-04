@@ -17,7 +17,7 @@
 
 #include "List.hpp"
 
-List::List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, uint16_t rect_color)
+List::List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, uint16_t rect_color, std::function<void()> _cb)
 {
   color = rect_color;
   box = new Rect(display, 0 , _heigth , 0, 0, 8, rect_color);
@@ -25,9 +25,10 @@ List::List(GFXForms *display, const char *text, int font_size, uint16_t font_col
   text_widget = new Text(display, font_color, text);
   text_widget->set_size(font_size);
   text_widget->set_wrap(true);
+  cb = _cb;
 }
 
-List::List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, Bitmap *icon, uint16_t rect_color)
+List::List(GFXForms *display, const char *text, int font_size, uint16_t font_color, int _heigth, Bitmap *icon, uint16_t rect_color, std::function<void()> _cb)
 {
   color = rect_color;
   box = new Rect(display, 0 , _heigth , 0, 0, 8, rect_color);
@@ -38,6 +39,7 @@ List::List(GFXForms *display, const char *text, int font_size, uint16_t font_col
   grid_widget->add(icon);
   grid_widget->add(text_widget);
   grid_widget->set_space_between(10); // Add some spacing between the icons and the text
+  cb = _cb;
 }
 
 List::~List()

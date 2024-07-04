@@ -35,7 +35,7 @@ class Widget {
   bool selected = false;   // Whether the widget
   bool clicked = false;    // Whether the widget is clicked or not
   uint16_t color;
-  std::function<void()> cb;  // Default callback
+  std::function<void()> cb = nullptr;  // Default callback
  public:
   virtual void set_pos(int _x, int _y) = 0;
   virtual void set_color(uint16_t _color) = 0;
@@ -60,10 +60,7 @@ class Widget {
   /// @return Height of the widget
   int get_heigth() { return heigth; }
   void set_callback(std::function<void()> callback) { cb = callback; }
-  void click() { 
-    clicked = true;
-    cb(); 
-  }
+  virtual void click() = 0;
 };
 
 #endif

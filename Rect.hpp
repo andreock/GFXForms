@@ -81,6 +81,7 @@ class Rect : public Widget {
   void click(void callback()) {
     callback();
   }
+  void click() {}
 };
 
 #endif
