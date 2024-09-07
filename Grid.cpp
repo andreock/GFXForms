@@ -67,5 +67,5 @@ void Grid::add(Widget *widget) {
 }
 
 void Grid::remove(size_t index) {
-  widgets.erase(index);
+  widgets.erase(widgets.begin() + index);
 }
