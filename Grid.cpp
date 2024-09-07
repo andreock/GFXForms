@@ -65,3 +65,7 @@ void Grid::display() {
 void Grid::add(Widget *widget) {
   widgets.push_back(widget);
 }
+
+void Grid::remove(size_t index) {
+  widgets.erase(index);
+}

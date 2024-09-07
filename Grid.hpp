@@ -56,6 +56,10 @@ class Grid : public Widget {
   /// @brief Add widget to grid
   /// @param widget Widget to add
   void add(Widget *widget);
+  
+  /// @brief Remove widget at index from grid
+  /// @param index index of widget to remove
+  void remove(size_t index);
 
   /// @brief Display the grid on TFT screen
   void display();
