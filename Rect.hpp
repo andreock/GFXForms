@@ -70,12 +70,15 @@ class Rect : public Widget {
   /// @brief Fill current rect
   /// @param fill_color Color for the fill
   void fill(uint16_t fill_color) {
-    /* Add some padding to fill only empty part of Rect, not the margin */
+    /* Add some padding to fill only the empty part of Rect, not the margin */
+    int y_sym = framework->tft->height() - y - height;
+
     if (radius == 0)  // Radius check
-      framework->tft->fillRect(x + 1, y + 1, width - 2, heigth - 2, fill_color);
+        framework->tft->fillRect(x + 1, y_sym + 1, width - 2, height - 2, fill_color);
     else
-      framework->tft->fillRoundRect(x + 1, y + 1, width - 2, heigth - 2, radius, fill_color);
+        framework->tft->fillRoundRect(x + 1, y_sym + 1, width - 2, height - 2, radius, fill_color);
   }
+
   /// @brief Click rect and execute function
   /// @param callback Function to execute
   void click(void callback()) {

@@ -17,7 +17,7 @@
 
 #include "GFXForms.hpp"
 
-GFXForms::GFXForms(int width, int height, Adafruit_ST7789 *display)
+GFXForms::GFXForms(int width, int height, Adafruit_ST7789 *display, int correctif)
 {
     tft = display;
     tft->init(width, height); // Init ST7789 240x320

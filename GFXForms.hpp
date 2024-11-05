@@ -33,7 +33,7 @@ class GFXForms {
       tft->fillScreen(color); 
    }
    void testfillrects(uint16_t color1, uint16_t color2) {
-      tft->drawRoundRect(50, 100, 50, 50, 8, color2);
+      tft->drawRoundRect(50, tft->height() - 100 - 50, 50, 50, 8, color2);
    }
    void set_rotation(int rotation) { tft->setRotation(rotation); }
    void reset() { tft->fillScreen(background_color); }

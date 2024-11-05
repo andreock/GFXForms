@@ -29,8 +29,10 @@ class Bitmap: public Widget
 private:
     uint8_t *image;
     void clean_bitmap() {
-        framework->tft->fillRect(x, y, width, heigth, framework->background_color);
+        int y_sym = framework->tft->height() - y - height; // Calcule la position miroir de `y`
+        framework->tft->fillRect(x, y_sym, width, height, framework->background_color);
     }
+
 public:
     Bitmap(GFXForms *display, uint8_t *_image, uint8_t _width, uint8_t _height);
     Bitmap(GFXForms *display, uint8_t *_image, uint8_t _width, uint8_t _height, uint8_t _x, uint8_t _y);
@@ -42,9 +44,11 @@ public:
         display();
     };
     void set_color(uint16_t _color){};
-    void display(){
-        framework->tft->drawBitmap(x, y, image, width, heigth, ST77XX_WHITE);
-    };
+    void display() {
+        int y_sym = framework->tft->height() - y - height; // Calcule la position miroir de `y`
+        framework->tft->drawBitmap(x, y_sym, image, width, height, ST77XX_WHITE);
+    }
+
     void set_dimension(int _width, int _heigth){
         // width = _width;
         // heigth = _heigth;
