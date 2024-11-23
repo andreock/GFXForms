@@ -62,10 +62,59 @@ void Grid::display() {
   displayed = true;
 }
 
+void Grid::display(vector<Widget *> _widgets) {
+  int current_element = 0;
+  int padding_x = 0;
+  int padding_y = 0;
+  /* Iterate each widget */
+  for (Widget *widget : _widgets) {
+    widget->set_dimension(element_size, widget->get_heigth());  // Set element dimension
+    widget->set_pos(x + padding_x, y + padding_y);              // Set widget position
+    padding_x += widget->get_width() + space_between;           // Add spacing between elements
+
+    widget->display();  // Display the element
+
+    /* Check if current_element is the last in the row */
+    if (++current_element % cols == 0) {
+      padding_x = 0;                           // Reset x padding for the new row
+      padding_y += widget->get_heigth() + y_spacing + initial_padding_y;  // Add padding for the new row
+    };
+  }
+  displayed = true;
+}
+
 void Grid::add(Widget *widget) {
   widgets.push_back(widget);
 }
 
 void Grid::remove(size_t index) {
   widgets.erase(widgets.begin() + index);
+}
+
+
+
+void Grid::set_selected(int pos, bool _selected) {
+  size_t old_widget = selected_widget;
+  selected_widget = pos;
+  if(get_current_widget()->get_y() > heigth) {
+    if(pos > old_widget) {
+      if(widgets.size() >= 1){
+        removed_el = 0;
+        framework->reset();
+        display(vector<Widget *>(widgets.begin() + (++pushed_el), widgets.end()));
+        dropped = true;
+      }
+    }
+  }
+  if(dropped && pos < old_widget && pushed_el != 0) {
+    framework->reset();
+    display(vector<Widget *>(widgets.begin() + (pushed_el--), widgets.end() - (removed_el++)));
+  } else if(dropped && pushed_el == 0) {
+    pushed_el = 0;
+    removed_el = 0;
+    dropped = false;
+    framework->reset();
+    display(vector<Widget *>(widgets.begin(), widgets.end()));
+  }
+  widgets[pos]->set_selected(_selected);
 }

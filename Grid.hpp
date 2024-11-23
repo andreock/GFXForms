@@ -36,6 +36,9 @@ class Grid : public Widget {
   int selected_widget = -1; // Selected widget
   int y_spacing = 10; // Spacing between elements on Y axis
   vector<Widget *> widgets; // All the widgets
+  size_t pushed_el = 0;
+  size_t removed_el = 0;
+  bool dropped = false;
 
  public:
   /// @brief Create a grid widget
@@ -63,6 +66,8 @@ class Grid : public Widget {
 
   /// @brief Display the grid on TFT screen
   void display();
+  
+  void display(vector<Widget *> _widgets);
 
   void set_y_spacing(int _y_spacing){
     y_spacing = _y_spacing;
@@ -106,10 +111,7 @@ class Grid : public Widget {
   /// @brief Set selected element
   /// @param pos Position of element to set selected
   /// @param _selected State of selected property of element
-  void set_selected(int pos, bool _selected) {
-    selected_widget = pos;
-    widgets[pos]->set_selected(_selected);
-  }
+  void set_selected(int pos, bool _selected);
 
   /// @brief Mock set_selected. NOT USE
   /// @param _selected state
