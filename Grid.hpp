@@ -158,7 +158,6 @@ class Grid : public Widget {
   /// @brief Get the selected widget
   /// @return Reference to the selected widget
   Widget *get_current_widget(){
-    Serial.println(selected_widget);
     return widgets[selected_widget];
   }
 };
