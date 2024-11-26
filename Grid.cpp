@@ -96,7 +96,7 @@ void Grid::remove(size_t index) {
 void Grid::set_selected(int pos, bool _selected) {
   size_t old_widget = selected_widget;
   selected_widget = pos;
-  if(get_current_widget()->get_y() > heigth) {
+  if(get_current_widget()->get_y() > heigth - 50) {
     if(pos > old_widget) {
       if(widgets.size() >= 1){
         removed_el = 0;
