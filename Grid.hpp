@@ -133,6 +133,8 @@ class Grid : public Widget {
   /// @param callback function to be called
   /// @deprecated
   void click(int pos, void callback()) {
+    if(widgets.size() == 0)
+      return;
     widgets[pos]->click(callback);
   }
 
@@ -140,11 +142,14 @@ class Grid : public Widget {
   /// @brief Click element at pos without execute callback
   /// @param pos element position
   void click(int pos) {
+    if(widgets.size() == 0)
+      return;
     widgets[pos]->click();
   }
 
   void click() {
-    Serial.println("Click on grid");
+    if(widgets.size() == 0)
+      return;
     widgets[selected_widget]->click();
   }
 
@@ -152,6 +157,8 @@ class Grid : public Widget {
   /// @param pos Widget position
   /// @param callback function to be set
   void set_callback(int pos, void callback()) {
+    if(widgets.size() == 0)
+      return;
     widgets[pos]->set_callback(callback);
   }
 
