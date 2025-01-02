@@ -50,6 +50,7 @@ void Text::set_text(String _text) {
   int length = text.length();
   text = _text;
   if (displayed){
+    width = (length * size * (size * 6));
     // Font size is actually size*6 and size*8
     framework->tft->fillRect(x, y, (length * size * (size * 6)), size * 8, framework->background_color); // Cleanup old text
     display();  // Display updated text
@@ -57,6 +58,7 @@ void Text::set_text(String _text) {
 }
 void Text::set_size(uint8_t _size) {
   size = _size;
+  heigth = size * 8;
 }
 void Text::display() {
   framework->tft->setTextColor(color);
